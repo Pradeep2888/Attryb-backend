@@ -1,6 +1,6 @@
 const express = require("express")
-// const { registerRouter } = require("./routes/register.route");
-// const { loginRouter } = require("./routes/login.route");
+const { registerRouter } = require("./routes/register.route");
+const { loginRouter } = require("./routes/login.route");
 const cors = require("cors");
 const { connection } = require("./config/db");
 
@@ -14,8 +14,8 @@ app.get("/", (req, res) => {
     res.send("welcome to api")
 })
 
-// app.use("/register",registerRouter)
-// app.use("/login",loginRouter)
+app.use("/register",registerRouter)
+app.use("/login",loginRouter)
 
 
 
