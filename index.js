@@ -3,6 +3,7 @@ const { registerRouter } = require("./routes/register.route");
 const { loginRouter } = require("./routes/login.route");
 const cors = require("cors");
 const { connection } = require("./config/db");
+const { oemRouter } = require("./routes/oem.route");
 
 
 const app = express();
@@ -16,6 +17,7 @@ app.get("/", (req, res) => {
 
 app.use("/register",registerRouter)
 app.use("/login",loginRouter)
+app.use("/oem",oemRouter)
 
 
 
