@@ -13,7 +13,7 @@ loginRouter.get("/",async(req,res)=>{
 
 loginRouter.post("/user",async (req,res)=>{
     const {email,password}=req.body
-    const user= await UserModel.findOne({email})
+    const user= await UserModel.findOne({email,password})
     if(!user){
         res.send({"msg":"please write registerd mail address"})
     }
