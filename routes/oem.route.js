@@ -3,7 +3,15 @@ const { oemModel } = require("../models/OemModel")
 const oemRouter=express.Router()
 
 oemRouter.get("/",async(req,res)=>{
-    const data=await oemModel.find()
+    const query=req.query
+    let data
+    if(query.search!==""){
+        data=await oemModel.find({"$or":[{"name":{$regex:query.search}}]},)
+    }
+    else{
+        data=await oemModel.find()
+    }
+    
     res.send({"oem":data})
 })
 

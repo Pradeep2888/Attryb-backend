@@ -13,4 +13,5 @@ const oemSchema=new mongoose.Schema({
 
 const oemModel=mongoose.model("oem",oemSchema)
 
+
 module.exports={oemModel}

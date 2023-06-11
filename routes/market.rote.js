@@ -11,7 +11,7 @@ marketRouter.get("/",async(req,res)=>{
         data=await marketModel.find()
     }
     else{
-        data=await marketModel.find({paint:query.colour})
+        data=await marketModel.find({paint:query.colour.toLowerCase()})
     }
     let arr=[]
 
