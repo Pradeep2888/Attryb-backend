@@ -81,6 +81,12 @@ const getData=(a,b,arr)=>{
   return arr1
 }
 
+marketRouter.get("/single-data/:id",async(req,res)=>{
+    const {id}=req.params
+    const data=await marketModel.find({_id:id})
+    res.send({"car":data})
+})
+
 marketRouter.post("/add/:oemid",async(req,res)=>{
     let {oemid}=req.params
     let {distance_covered,image_url,discription,scratches,paint,no_of_accidents,no_previous_buyer,registration_place,oem_id,secondhand_price}=req.body

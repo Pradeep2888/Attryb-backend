@@ -11,6 +11,7 @@ loginRouter.get("/",async(req,res)=>{
 
 
 
+
 loginRouter.post("/user",async (req,res)=>{
     const {email,password}=req.body
     const user= await UserModel.findOne({email,password})
